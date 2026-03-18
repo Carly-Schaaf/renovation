@@ -24,6 +24,157 @@
     <link rel="modulepreload" crossorigin href="/assets/query-vendor-E4HuqEnl.js">
     <link rel="modulepreload" crossorigin href="/assets/router-vendor-B5MdcdXU.js">
     <link rel="stylesheet" crossorigin href="/assets/index-XrF_wRqM.css">
+    <style>
+      /* ========= DESIGN SYSTEM OVERRIDES ========= */
+
+      /* --- Buttons: architectural, not app-like --- */
+      button.inline-flex,
+      a > button.inline-flex {
+        letter-spacing: 0.08em !important;
+        border-radius: 2px !important;
+        font-size: 0.8rem !important;
+        text-transform: uppercase !important;
+        transition: background-color 0.25s ease, box-shadow 0.25s ease !important;
+      }
+      /* Primary CTA */
+      [class*="bg-cottage-burgundy"].inline-flex {
+        padding: 12px 28px !important;
+        box-shadow: none !important;
+      }
+      [class*="bg-cottage-burgundy"].inline-flex:hover {
+        filter: brightness(0.9) !important;
+        box-shadow: none !important;
+        transform: none !important;
+      }
+      input, textarea {
+        border-radius: 3px !important;
+      }
+
+      /* --- Portfolio: featured first card --- */
+      #portfolio .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+      @media (min-width: 768px) {
+        #portfolio .grid {
+          grid-template-columns: 1fr 1fr !important;
+        }
+        #portfolio .grid > *:first-child {
+          grid-column: 1 / -1 !important;
+        }
+        #portfolio .grid > *:first-child .aspect-\[4\/3\],
+        #portfolio .grid > *:first-child [class*="aspect-"] {
+          aspect-ratio: 16 / 9 !important;
+        }
+      }
+      /* Card refinements */
+      #portfolio .grid > * {
+        border: none !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
+        border-radius: 3px !important;
+        overflow: hidden;
+      }
+      #portfolio .grid > * [class*="aspect-"] {
+        border: none !important;
+        outline: none !important;
+        background: white !important;
+      }
+      #portfolio .grid > * img {
+        border: none !important;
+        display: block !important;
+        transform: scale(1.01) !important;
+      }
+      #portfolio .grid > *:hover {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.07) !important;
+      }
+      #portfolio .grid > * [class*="border-t"] {
+        border-top: none !important;
+      }
+      #portfolio .grid > * [class*="bg-white"][class*="p-5"] {
+        padding: 1.5rem 1.75rem !important;
+      }
+
+
+
+      /* --- About section: comfortable reading width --- */
+      #about [class*="text-lg"][class*="leading-relaxed"][class*="mb-5"] {
+        max-width: 38em;
+        line-height: 1.85 !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      /* --- Contact section: warm neutral instead of dark green --- */
+      #contact {
+        background: #3d3d38 !important;
+      }
+      #contact [class*="opacity-5"] {
+        display: none !important;
+      }
+      #contact [class*="bg-cottage-cream"] {
+        background: #faf8f5 !important;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08) !important;
+        border: none !important;
+      }
+
+      /* --- Footer: lighter, calmer --- */
+      footer {
+        background: #353530 !important;
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+      footer [class*="border-t"] {
+        border-color: rgba(255,255,255,0.06) !important;
+      }
+
+      /* --- Image consistency: warm harmonization --- */
+      #portfolio img,
+      #process img,
+      #about img {
+        filter: brightness(1.02) saturate(1.05) contrast(1.01);
+      }
+
+      /* --- Typography consistency --- */
+      /* Section subtitles */
+      section [class*="text-cottage-warm"][class*="text-lg"][class*="leading-relaxed"] {
+        font-size: 1.05rem !important;
+        line-height: 1.75 !important;
+      }
+      /* Section padding consistency */
+      section[class*="py-24"] {
+        padding-top: 7rem !important;
+        padding-bottom: 7rem !important;
+      }
+      @media (min-width: 1024px) {
+        section[class*="lg:py-32"] {
+          padding-top: 9rem !important;
+          padding-bottom: 9rem !important;
+        }
+      }
+
+      /* --- Navbar: subtle gradient for legibility over hero --- */
+      nav.fixed[class*="bg-transparent"]::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0));
+        pointer-events: none;
+        z-index: -1;
+        height: 150%;
+      }
+
+      /* --- Reduce border-radius site-wide --- */
+      [class*="rounded-sm"] {
+        border-radius: 3px !important;
+      }
+
+      /* --- Clean up shadows site-wide --- */
+      [class*="shadow-2xl"] {
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+      }
+      [class*="shadow-xl"] {
+        box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
