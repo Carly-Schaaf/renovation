@@ -51,20 +51,17 @@
         border-radius: 3px !important;
       }
 
-      /* --- Portfolio: featured first card --- */
+      /* --- Portfolio: full-width stacked cards --- */
       #portfolio .grid {
         grid-template-columns: 1fr !important;
         gap: 2.5rem !important;
       }
       @media (min-width: 768px) {
         #portfolio .grid {
-          grid-template-columns: 1fr 1fr !important;
+          grid-template-columns: 1fr !important;
         }
-        #portfolio .grid > *:first-child {
-          grid-column: 1 / -1 !important;
-        }
-        #portfolio .grid > *:first-child .aspect-\[4\/3\],
-        #portfolio .grid > *:first-child [class*="aspect-"] {
+        #portfolio .grid > * .aspect-\[4\/3\],
+        #portfolio .grid > * [class*="aspect-"] {
           aspect-ratio: 16 / 9 !important;
         }
       }
